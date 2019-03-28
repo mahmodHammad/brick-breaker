@@ -1,28 +1,25 @@
-import Paddle from './paddel.js'
-import InputHandler from './input.js'
-import Ball from './ball.js'
-
+import Game from './game.js'
 
 var canvas = /** @type {HTMLCanvasElement} */ (document.getElementById('cod'))
 let fjf=canvas.getContext("2d");
 const GAME_WIDTH =800 , GAME_HEIGHT=600;
 
-let paddle = new Paddle(GAME_WIDTH ,GAME_HEIGHT);
-new InputHandler(paddle)
-let ball =   new Ball(GAME_WIDTH ,GAME_HEIGHT)
+let game=new Game(GAME_WIDTH ,GAME_HEIGHT);
+game.start()
 
-let lastTime=0
+//let lastTime=0
 function gameloop(timestamp){
-    let deltaTime=timestamp-lastTime;
-    lastTime=timestamp;
+    // let deltaTime=timestamp-lastTime;
+    // lastTime=timestamp;
 
     fjf.clearRect(0,0,GAME_WIDTH ,GAME_HEIGHT);
-    paddle.update(deltaTime);
-    ball.update(deltaTime)
-    paddle.draw(fjf)
-    ball.draw(fjf)
+    // game.update(deltaTime)
+    game.update()
+    game.draw(fjf)
     
-requestAnimationFrame(gameloop)
+ requestAnimationFrame(gameloop)
+    
+
 }
 
 gameloop()
