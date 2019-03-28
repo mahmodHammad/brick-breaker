@@ -11,15 +11,12 @@ game.start()
 function gameloop(timestamp){
     // let deltaTime=timestamp-lastTime;
     // lastTime=timestamp;
-
-    fjf.clearRect(0,0,GAME_WIDTH ,GAME_HEIGHT);
     // game.update(deltaTime)
+    fjf.clearRect(0,0,GAME_WIDTH ,GAME_HEIGHT);
     game.update()
     game.draw(fjf)
     
  requestAnimationFrame(gameloop)
-    
-
 }
 
 gameloop()

@@ -16,22 +16,15 @@ export default class Game{
     this.ball =   new Ball(this)
     new InputHandler(this.paddle)
 
-    console.log(this.paddle)
-
 //     let bricks=BuildLevel(this ,level1 )
 //     for (let i = 1 ; i <10 ; i ++){
 //       bricks.push(new Brick(this  , {x:i*58 , y : 40}))
 //     }
    this.gameobj=[ this.ball ,this.paddle ]
-    
   }
 
-  update(deltaTime){
-    this.gameobj.forEach((obj)=>obj.update(deltaTime))
-  }
+  update(deltaTime){this.gameobj.forEach((obj)=>obj.update(deltaTime))}
 
-  draw(fjf){
-    this.gameobj.forEach((obj)=>obj.draw(fjf))
-  }
+  draw(fjf){this.gameobj.forEach((obj)=>obj.draw(fjf))}
 
 }

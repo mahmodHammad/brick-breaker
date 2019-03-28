@@ -3,10 +3,14 @@ export default class Ball{
         this.img=document.getElementById('img_ball')
         this.size=16;
         this.position={x:10,y:20}
-        this.speed={x:4,y:10}
+        this.speed={x:5,y:20}
         this.gameHeight=game.GAME_HEIGHT;
         this.gameWidth=game.GAME_WIDTH;
         this.game=game;
+
+         this.col=["#a12","#043","#937","#094","#157","#083","#ab7","#fa4","#049"]
+        // this.col=["#a12",'#cc3']
+        this.i=0;
     }
 
     draw(fjf){
@@ -32,12 +36,15 @@ export default class Ball{
     if(bottomball>=toppaddle &&this.position.x >leftpaddle &&this.position.x <rightpaddle){
     this.speed.y =-this.speed.y;
     this.position.y=this.game.paddle.position.y-this.size
-    console.log('hit')
-    console.log()
+    
+        this.game.paddle.color=this.col[this.i]
+        if(this.i>7)this.i=-1 
+        this.i++;
 }
-else if (bottomball-this.size*2>=toppaddle){
-    this.speed={x:0,y:0}
-}
+// else if (bottomball-this.size*2>=toppaddle){
+//      this.speed={x:0,y:0}
+  
+// }
 
     }
 }

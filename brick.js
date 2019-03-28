@@ -1,12 +1,9 @@
 export default class{
   constructor(game ,position ){
-
     this.img=document.getElementById('img_brick')
     this.width=80;
     this.height=25
     this.position=position
-
-
     this.game=game;
   }
 
